@@ -4,7 +4,8 @@
   "description": "'YelpCamp v1'",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "author": "Elvin M. Samuel",
   "license": "ISC",
@@ -13,6 +14,7 @@
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
+    "method-override": "^2.3.10",
     "mongoose": "^4.13.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
