@@ -25,7 +25,7 @@ mongoose.connect('mongodb://localhost/yelp_camp_v10', {useMongoClient: true})
 
 // v11Deployment Stuff: adding the mLab url
 // MongoClient.connect('mongodb://elvinsamuel:sitk2byc@ds159997.mlab.com:59997/yelpcamp_elvinsamuel');
-//MongoClient.connect('mongodb://elvinsamuel:sitk2b%3Ayc@ds159997.mlab.com:59997/yelpcamp_elvinsamuel');
+// MongoClient.connect('mongodb://elvinsamuel:sitk2b%3Ayc@ds159997.mlab.com:59997/yelpcamp_elvinsamuel');
 
 // FOUND A WORKAROUND! My password contains a ':', so we have to use URL Encoding to include that character! Great stuff.
 /*MongoClient.connect("mongodb://elvinsamuel:sitk2b%3Ayc@ds159997.mlab.com:59997/yelpcamp_elvinsamuel", { 
