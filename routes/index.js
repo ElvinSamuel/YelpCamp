@@ -8,7 +8,7 @@ var User = require('../models/user');
 // The Root Route
 
 router.get('/', function(req, res){
-    res.render('landing', {currentUser: req.user});
+    res.render('landing');
 });
 
 

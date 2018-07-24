@@ -62,7 +62,10 @@ router.get("/:id", function(req, res){
     // we don't need the '/campground' part, from our 'use' in the app.js
 router.get('/:id/edit', checkCampgroundOwnership,function(req, res){
     Campground.findById(req.params.id, function(err, foundCampground){
-        res.render('campgrounds/edit', {campground:foundCampground, currentUser: req.user});
+        res.render('campgrounds/edit', {
+            campground:foundCampground, 
+            currentUser: req.user
+        });
     });
 });
 
@@ -102,7 +105,7 @@ function isLoggedIn(req, res, next){
 }
 
 function checkCampgroundOwnership(req, res, next){
-        if(req.isAuthenticated()){
+    if(req.isAuthenticated()){
         // if so, does that user own this campground?
         Campground.findById(req.params.id, function(err, foundCampground){
             if(err){

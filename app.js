@@ -5,14 +5,23 @@ var express        = require('express'),
     passport       = require('passport'),
     LocalStrategy  = require('passport-local'),
     methodOverride = require('method-override'),
-    // Workaround for the mongoose.connect('mongodb') thing from the v11Deployed/ videos
-    MongoClient    = require('mongodb').MongoClient,
 // For The Modules
     Campground     = require('./models/campground'),
     Comment        = require('./models/comment'),
     User           = require('./models/user'),
     seedDB         = require('./seeds');
-    
+
+// ===================================================    
+// unrelated to the YelpCamp Development -- including LESS for my CSS
+/*
+var lessMiddleware = require('less-middleware');
+
+app.use(lessMiddleware({
+    src      : __dirname + '/public',
+    compress : true
+}));
+*/
+// ===================================================
 
 // For navigating through routes:
     var commentRoutes = require('./routes/comments'),
@@ -21,24 +30,7 @@ var express        = require('express'),
     
     
 mongoose.Promise  = global.Promise;
-mongoose.connect('mongodb://localhost/yelp_camp_v10', {useMongoClient: true})
-
-// v11Deployment Stuff: adding the mLab url
-// MongoClient.connect('mongodb://elvinsamuel:sitk2byc@ds159997.mlab.com:59997/yelpcamp_elvinsamuel');
-//MongoClient.connect('mongodb://elvinsamuel:sitk2b%3Ayc@ds159997.mlab.com:59997/yelpcamp_elvinsamuel');
-
-// FOUND A WORKAROUND! My password contains a ':', so we have to use URL Encoding to include that character! Great stuff.
-/*MongoClient.connect("mongodb://elvinsamuel:sitk2b%3Ayc@ds159997.mlab.com:59997/yelpcamp_elvinsamuel", { 
-    uri_decode_auth: true 
-    }, function(err, db) {
-        console.log(err);
-    }
-);*/
-/*MongoClient.connect('mongodb://elvinsamuel:sitk2b%3Ayc@ds159997.mlab.com:59997/yelpcamp_elvinsamuel', {
-    username: 'elvinsamuel',
-    password: 'sitk2b:yc'
-});*/
-
+mongoose.connect('mongodb://localhost/yelp_camp_v10', {useMongoClient: true});
 
 // seedDB();
 
@@ -59,19 +51,17 @@ app.use(express.static(__dirname + '/public'))
 
 app.set("view engine", "ejs");
 
-
 // For Method Override (v10 Stuff):
 app.use(methodOverride('_method'));
+    
     
 // ===================== Passport Configuration
 app.use(require('express-session')({
     secret: 'This can be anything that you want, so I\'ll use this.',
     resave: false,
     saveUninitialized: false
-    })
-);
-
-
+    
+}));
 
 app.use(passport.initialize());
 app.use(passport.session());
