@@ -13,7 +13,7 @@
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="/campgrounds">YelpCamp</a>
+                    <a class="navbar-brand" href="/">YelpCamp</a>
                 </div>
                 
                 <div class="collapse navbar-collapse">
@@ -23,7 +23,7 @@
                             <li><a href="/register">Sign Up</a></li>
                         <% } else { %>
                             <li><a href="#">Signed In As <%= currentUser.username %></a></li>
-                            <li><a href="/">Logout</a></li>
+                            <li><a href="/logout">Logout</a></li>
                         <% } %>
                     </ul>
                 </div>

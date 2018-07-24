@@ -9,8 +9,3 @@
 .thumbnail .caption-full {
     padding: 9px;
 }
-
-/*'DELETE' button on the show page (make it align with the 'edit' button)*/
-#delete-form {
-    display: inline;
-}
