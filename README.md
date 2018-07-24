@@ -1,4 +1,15 @@
-# YelpCamp Redeux V4: The Legend Continues
+# YelpCamp V11: The Legend Continues
+
+##What's new
+Authentication
+My app now has to a degree authentication and limited views. This allows the user to see only the information that pertains to their account, and edit only the posts that they created.
+
+MongoDB via mLab
+Now the app uses mLab to host data instead of Mongo in my local.
+
+Heroku/Mongo Integration
+The whole project is hosted on Heroku right now, with the Heroku origin installed
+
 
 
 ## Nested Routes
