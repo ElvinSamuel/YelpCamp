@@ -1,26 +1,24 @@
-# YelpCamp Redeux V4: The Legend Continues
+# YelpCamp - Meet Explorers
 
+## What is YelpCamp?
+Similar to Yelp itself, YelpCamp is a review site for campgrounds where campers can chat. Simple, right?
 
-## Nested Routes
-With the campgrounds routing below, notice that it works for the campgrounds
-themselves, but not with comments. That's because each comment need to be associated
-with a campground, so the route would have to include that specific campground id.
-We'll 'nest' the comment routing inside that of the campground routing for it to work.
+# The Build
+## NodeJS 
+The entire backend of this site is in NodeJS, modules and all. This was my biggest project in the framework, using everything I knew and learned to construct a fully-functional and layered website.
 
+## MongoDb
+The database is built in Mongo via Mongoose. Campsites, camper data, everything is added via that schema and displayed using Mongoose in conjuction with Express.
 
-RESTful Routes (Campgrounds)
-==========================================================
-name      url               verb        desc
-==========================================================
-INDEX    /campgrounds       GET         Display a list of all campgrounds
-NEW      /campgrounds/new   GET         Displays a FORM to make a new campground
-CREATE   /campgrounds       POST        Add new campground(s) to DB
-SHOW     /campgrounds/:id   GET         Shows info about a specific campground.
+## Bootstrap
+The quickest way for me to get an MVP was to use bootstrap. The pre-built objects made the front-end easy and intuitive.
 
+## Express
+Like the "mac" to Node's "cheese", express was critical for reconfiguring and rerouting my pages. This keeps the code files tidy and easy to debug.
 
-RESTful Routes (Comments)
-==========================================================
-name      url                            verb        desc
-==========================================================
-NEW      /campgrounds/:id/comments/new   GET         Displays a FORM to make a new comment
-CREATE   /campgrounds/:id/comments       POST        Add new comment(s) to DB
+## EJS
+I learned more about React later, but EJS was the first view framework I learned. It's quick and intuitive -- not as robust as React but great for this project.
+
+# Install
+
+# (To Be Continued)
